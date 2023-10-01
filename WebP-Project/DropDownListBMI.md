@@ -66,6 +66,10 @@ public partial class BMI : System.Web.UI.Page
 ## 실행결과
 ### 적용하지 않은 페이지
 
+
+https://github.com/gryrryfh/web-programming/assets/50912987/c438e6e9-f68d-4313-b114-f4269d4b7b13
+
+
   
 ### IsPostBack속성을 적용한 것
 ![image](https://github.com/gryrryfh/web-programming/assets/50912987/1f45a12a-70fe-4b20-9833-c292273d5ab6)
