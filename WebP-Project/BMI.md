@@ -1,3 +1,7 @@
+## 4-1
+![image](https://github.com/gryrryfh/web-programming/assets/50912987/d1742353-895e-4c10-b5b2-efa4114054fa)
+
+## 4-2
 ## 코드
 ```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeFile="1.aspx.cs" Inherits="_1" %>
