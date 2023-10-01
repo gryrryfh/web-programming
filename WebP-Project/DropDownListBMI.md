@@ -1,6 +1,6 @@
 ## 코드
 ```html
-<%@ Page Language="C#" AutoEventWireup="true" CodeFile="BMI.aspx.cs" Inherits="_1" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="BMI.aspx.cs" Inherits="BMI" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -40,7 +40,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class _1 : System.Web.UI.Page
+public partial class BMI : System.Web.UI.Page
 {
     protected void Calc_ServerClick(object sender, EventArgs e)
     {
@@ -63,6 +63,10 @@ public partial class _1 : System.Web.UI.Page
     }
 }
 ```
-실행결과
+## 실행결과
+### 적용하지 않은 페이지
+
+  
+### IsPostBack속성을 적용한 것
 ![image](https://github.com/gryrryfh/web-programming/assets/50912987/1f45a12a-70fe-4b20-9833-c292273d5ab6)
 
