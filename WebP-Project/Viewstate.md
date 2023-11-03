@@ -5,11 +5,11 @@ https://github.com/gryrryfh/web-programming/assets/50912987/4580e8f2-dbda-4022-9
 #### 6-2
 https://github.com/gryrryfh/web-programming/assets/50912987/b8d2c5ea-3742-4f86-9df3-c08005f65cbf
 #### 6-3
-
+https://github.com/gryrryfh/web-programming/assets/50912987/5ef6d480-6619-4f56-83ac-4d0476bb54cb
 ## 코드
 ### 6-1
 ### html
-```html
+``` html
 <%@ Page Language="C#" AutoEventWireup="true" ViewStateEncryptionMode="Always" EnableViewStateMAC="false" CodeFile="PitchRaising.aspx.cs" Inherits="PitchRaising" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -45,7 +45,7 @@ https://github.com/gryrryfh/web-programming/assets/50912987/b8d2c5ea-3742-4f86-9
 </html>
 ```
 ### aspx.cs
-```c#
+``` c#
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -94,7 +94,7 @@ public partial class PitchRaising : System.Web.UI.Page
 ```
 
 ### 6-2
-```html
+``` html
 <%@ Page Language="C#" AutoEventWireup="true" CodeFile="FileSearch.aspx.cs" Inherits="FileSearch" %>
 
 <!DOCTYPE html>
@@ -193,8 +193,131 @@ public partial class FileSearchResult : System.Web.UI.Page
     }
 }
 ```
-#### 6-3
+### 6-3
+``` html
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="FileSearch.aspx.cs" Inherits="FileSearch" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="text-align: center">
+            검색어를 포함하는 파일 검색 <br />
+            검색어 :
+            <asp:TextBox ID="txtKeyWord" runat="server"></asp:TextBox>
+            <br />
+            파일형 :
+            <asp:DropDownList ID="ddlFileType" runat="server">
+                <asp:ListItem Value="0">워드(*.doc)</asp:ListItem>
+                <asp:ListItem Value="1">파워포인트(*.ppt)</asp:ListItem>
+                <asp:ListItem Value="2">한글(*.hwp)</asp:ListItem>
+                <asp:ListItem Value="3">어도비(*.pdf)</asp:ListItem>
+            </asp:DropDownList>
+            <br />
+            <asp:Button ID="btnSearch" runat="server" Text="검색어 보기" OnClick="btnSearch_Click" />
+        </div>
+    </form>
+</body>
+</html>
 ```
+``` html
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="FileSearchResult.aspx.cs" Inherits="FileSearchResult" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="text-align: center">
+            검색어를 포함하는 파일 검색 <br />
+            <asp:HyperLink ID="lnkSearchString" Target="_blank" runat="server">HyperLink</asp:HyperLink>
+&nbsp;
+            <asp:Button ID="btnGoBack" PostBackUrl="~/FileSearch.aspx" runat="server" Text="이전 페이지로 가기" />
+        </div>
+    </form>
+</body>
+</html>
+```
+``` c#
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class FileSearch : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e) { }
+    public string KeyWord
+    {
+        get { return txtKeyWord.Text; }
+    }
+
+    public string FileType
+    {
+        get
+        {
+            string returnValue = "";
+            switch (ddlFileType.SelectedIndex)
+            {
+                case 0:
+                    returnValue = "filetype:doc";
+                    break;
+                case 1:
+                    returnValue = "filetype:ppt";
+                    break;
+                case 2:
+                    returnValue = "filetype:hwp";
+                    break;
+                case 3:
+                    returnValue = "filetype:pdf";
+                    break;
+            }
+            return returnValue;
+        }
+    }
+
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        string queryString = "KeyWord=" + Server.UrlEncode(txtKeyWord.Text);
+        queryString += "&";
+        queryString += "FileType=" + this.FileType;
+        Response.Redirect("FileSearchResult.aspx?" + queryString);
+    }
+}
+```
+``` c#
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Policy;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class FileSearchResult : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        lnkSearchString.Text = Request.QueryString["KeyWord"] + " ";
+        lnkSearchString.Text += Request.QueryString["FileType"];
+        string url = "http://www.google.co.kr/search?q=";
+        url += Server.UrlEncode(lnkSearchString.Text);
+        lnkSearchString.NavigateUrl = url;
+    }
+}
+```
+
 
 
 
