@@ -3,9 +3,9 @@
 #### 6-1
 https://github.com/gryrryfh/web-programming/assets/50912987/4580e8f2-dbda-4022-9ba7-a60cf482ed65
 #### 6-2
-https://github.com/gryrryfh/web-programming/assets/50912987/b8d2c5ea-3742-4f86-9df3-c08005f65cbf
+https://github.com/gryrryfh/web-programming/assets/50912987/4fb1f680-ace2-41c9-8a65-8b01370920e9
 #### 6-3
-https://github.com/gryrryfh/web-programming/assets/50912987/5ef6d480-6619-4f56-83ac-4d0476bb54cb
+https://github.com/gryrryfh/web-programming/assets/50912987/ed30826b-edd6-4df1-8ca0-d20bf4ba1cae
 ## 코드
 ### 6-1
 ### html
