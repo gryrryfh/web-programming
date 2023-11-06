@@ -8,6 +8,8 @@ https://github.com/gryrryfh/web-programming/assets/50912987/51fa4a28-de35-4f72-a
 
 ![image](https://github.com/gryrryfh/web-programming/assets/50912987/dca96672-1424-4324-b787-16a774a73192)
 
+![image](https://github.com/gryrryfh/web-programming/assets/50912987/b08a1e61-25c3-4d7f-81a8-2120939f1fac)
+
 ## 코드
 #### ShoppingBasket.aspx
 ``` html
